@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@700&family=Ubuntu&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    margin-top: 10px;
+}
+
+.body{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("pexels-sagar-shally-11305767.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav{
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 99;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 0px 80px;
+}
+
+.logo{
+    font-size: 21px;
+    color: #25316D;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    padding: 9px 17px;
+    font-size: 18px;
+    color: #25316D;
+    /* font-family: ; */
+}
+
+
+.icon{
+    display: none;
+}
+
+.h1-quote{
+    color: white;
+    font-size: 25px;
+    max-width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Pacifico', cursive;
+}
+
+#about{
+    text-align: center;
+    height: 480px;
+}
+
+.section-heading{
+    text-align: center;
+    font-size: 2.7rem;
+    margin-top: 70px;
+    color: #25316D;
+    font-family: 'Pacifico', cursive;
+}
+
+.about p{
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    font-size: 1.3rem;
+    width: 70%;
+    word-spacing: 7px;
+    line-height: 30px;
+    margin: 70px auto;
+    display: block;
+    color: #411530;
+    text-align: justify;
+    justify-content: center;
+    font-weight: 700;
+    
+}
+
+.categories{
+    text-align: center;
+    margin: 70px auto;
+    width: 80%;
+}
+
+.categories-menu ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 20px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #D8D8D8;
+    border-radius: 15px;
+    color: #5F6F94;
+    margin-right: 20px;
+    
+}
+
+.categories-menu ul li:hover{
+    color: white; 
+    background-color: #25316D;  
+    border-radius: 8px;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.categories-menu ul li:active{
+    color: white; 
+    background: #25316D;  
+    border-radius: 8px;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.category-item{
+    width: 100%;
+}
+
+.category-item .item{
+    width: 320px;
+    height: 320px;
+    float: left;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+
+.category-item .item img{
+    width: 85%;
+    height: 85%;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+.p-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    max-width: 100%;
+    gap: 25px;
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.p-list .img-card{
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.p-list .img-card:hover .overlay{
+    z-index: 666;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+.p-list .img-card .info{
+    z-index: 666;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    color: whitesmoke;
+    transform: translate(20px);
+    transition: .5s ease;
+    opacity: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.p-list .img-card:hover .info{
+    transform: translateY(0);
+    opacity: 1;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.model-img{
+    width: 55%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.p-model{
+    z-index: 9999999999;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(20px);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.p-model.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.p-model.active .p-model-body{
+    transform: translateY(0);
+}
+
+.p-model-body{
+    position: relative;
+    background: #8BBCCC;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: #7B7A72;
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.fa-xmark{
+    margin-right: -90%;
+    margin-top: -10px;
+}
+
+
+.social{
+    text-align: center;
+    margin: 70px auto;
+    width: 100%;
+}
+
+.social-heading{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    font-weight: 900;
+    color: #25316D;
+}
+
+.wrap{
+    height: 85%;
+    border-radius: 8px;
+    width: 100%;
+    float: left;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.student{
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 0px;
+    width: 30%;
+}
+
+.student img{
+    height: 25%;
+    width: 65%;
+    margin-left: 100px;
+    border-radius: 10px;
+}
+
+.wrap .student p{
+    margin-left: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+    color: #411530;
+    font-weight: 800;
+}
+
+.wrap .student .info{
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+.info span{
+    margin-right: 10px;
+}
+
+.go{
+    color: #B73E3E;
+    font-weight: 900;
+}
